@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Interface</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .marquee {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .active {
+            color:gray; /* Tailwind's gray-600 */
+        }
+        
+        th{ 
+          font-weight: 400;
+          color: gray;
+        }
+        
+        td{
+          padding-top: 10px;
+        }
+   
+
+
+    </style>
+</head>
+<body class="bg-gray-100 dark dark:bg-black">
+    <!-- Header Section -->
+    <header class=" flex justify-between px-4 py-1 ">
+        <img src="https://img.icons8.com/material-outlined/384/iveco.png" alt="Logo" class="h-10">
+        <button class="text-gray-500">
+<img width="25" height="25" src="https://img.icons8.com/stickers-duotone/512/globe.png" alt="globe"/>
+      </button>
+    </header>
+
+    <!-- Carousel Section -->
+    <div class="relative w-11/12 mx-auto bg-gray-100 dark:bg-black px-1 rounded-md shadow-md">
+        <div id="carousel" class="flex overflow-hidden">
+            <img src="https://i.ibb.co/ZWTzCKV/images-18.jpg" class="w-full rounded-lg" alt="Slide 1">
+            <img src="https://i.ibb.co/G08L8vc/download.jpg" class="w-full rounded-lg hidden" alt="Slide 2">
+            <img src="https://i.ibb.co/8YLyRyh/images-17.jpg" class="w-full rounded-lg hidden" alt="Slide 3">
+        </div>
+        <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white">❮</button>
+        <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white">❯</button>
+    </div>
+
+    <!-- Marquee Text -->
+    
+    <div class="marquee flex   items-center bg-gray-100 dark:bg-black w-11/12 px-1 mx-auto
+    500  mt-2 text-gray-600 dark:text-slate-400 ">
+<div class="bg-gray-100 dark:bg-black px-2">
+  <img width="25" height="25" src="https://img.icons8.com/stickers-duotone/512/commercial.png" alt="">
+</div>
+
+
+
+        <marquee class="text-sm w-full" direction="left">Long-term benefits for our customers! Investment. Asset Operation. Smart Integration</marquee> 
+    </div>
+ 
+    <!-- Quick Actions -->
+    <div class=" grid grid-cols-4 gap-2 p-4 text-gray-600 text-sm">
+      
+      <button class="flex flex-col items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/add-to-shopping-basket.png" alt="add-to-shopping-basket"/>
+        </div>
+                    <p class="dark:text-slate-400">Recharge</p>
+      </button>
+      
+      <button class="flex flex-col items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/initiate-money-transfer.png" alt="add-to-shopping-basket"/>
+        </div>
+                    <p class="dark:text-slate-400">Withdrawal</p>
+      </button>
+          
+          
+      <button class="flex flex-col items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/invite.png" alt="add-to-shopping-basket"/>
+        </div>
+                    <p class="dark:text-slate-400">Invite</p>
+      </button>
+          
+          
+      <button class="flex flex-col items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/circled-down.png" alt="add-to-shopping-basket"/>
+        </div>
+                    <p class="dark:text-slate-400">App</p>
+      </button>
+      
+            <button class="flex flex-col items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/crowd.png" alt="add-to-shopping-basket"/>
+        </div>
+                    <p class="dark:text-slate-400">Team</p>
+      </button>
+      
+                  <button class="flex flex-col items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/organization.png" alt="add-to-shopping-basket"/>
+        </div>
+                    <p class="dark:text-slate-400">Certificate</p>
+      </button>
+      
+
+      
+      
+              <button class="flex flex-col  items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/online-support.png" />
+        </div>
+                    <p class="dark:text-slate-400">Service</p>
+      </button>
+      
+                    <button class="flex flex-col  items-center">
+        <div class="bg-gray-100 dark:bg-black  shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1)] dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] rounded-2xl py-4 p-4 flex flex-col items-center">
+                  <img width="32" height="32" src="https://img.icons8.com/stickers-duotone/512/note.png" />
+        </div>
+                    <p class="dark:text-slate-400">Record</p>
+      </button>
+      
+
+    </div>
+    
+
+
+    <!-- Market Data -->
+    <div class="w-11/12 mx-auto bg-gray-100 dark:bg-black shadow-[6px_6px_12px_rgba(197,197,197,0.4),-6px_-6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)]
+    dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)]
+    rounded-2xl py-3.5 p-3 rounded-lg text-xs">
+        <h2 class="text-xs dark:text-slate-400">Market</h2>
+        <table class="w-full  text-center  mt-2">
+            <thead class="w-full   ">
+                <tr class=" ">
+                    <th >Name</th>
+                    <th>Price</th>
+                    <th>Increase/Decrease</th>
+                </tr>
+            </thead>
+            <tbody class="w-full  " id="marketData">
+                <!-- Dynamic Data -->
+            </tbody>
+        </table>
+    </div>
+    <div style="height: 100px"></div>
+
+!-
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-black dark:text-slate-400     dark:shadow-[2px_2px_20px_rgba(197,197,197,0.4),6px_6px_12px_rgba(0,0,0,0.1),inset_3px_3px_6px_rgba(0,0,0,0.1)] shadow-lg">
+    <ul class="flex justify-around py-2 px-3">
+        <li id="navHome" class="text-gray-900 flex flex-col items-center active">
+          <img width="25" height="25" src="https://img.icons8.com/stickers-duotone/512/home.png" alt="" />
+            <p class="text-xs dark:text-slate-400">Home</p>
+        </li>
+        <li id="navRecord" class="text-gray-900 flex flex-col items-center active">
+          <img width="25" height="25" src="https://img.icons8.com/stickers-duotone/512/bitcoin.png" alt="bitcoin"/>
+            <p class="text-xs dark:text-slate-400">Quantify</p>
+        </li>
+        
+        <li id="navWallet" class="text-gray-900 flex flex-col items-center active">
+          <img width="25" height="25" src="https://img.icons8.com/stickers-duotone/512/wallet.png" alt="" />
+            <p class="text-xs dark:text-slate-400">Wallet </p>
+        </li>
+        <li id="navMine" class="text-gray-900 flex flex-col items-center active">
+          <img width="25" height="25" src="https://img.icons8.com/stickers-duotone/512/wallet.pnghttps://img.icons8.com/stickers-duotone/512/user-male-circle.png" alt="" />
+            <p class="text-xs dark:text-slate-400">Mine</p>
+        </li>
+    </ul>
+</nav>
+
+    <script>
+// Carousel Logic
+let currentSlide = 0;
+const slides = $('#carousel img');
+const totalSlides = slides.length;
+let autoSlide;
+
+// Function to show the current slide
+function showSlide(index) {
+    slides.addClass('hidden').eq(index).removeClass('hidden');
+}
+
+// Function to start the automatic swipe
+function startAutoSwipe() {
+    autoSlide = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }, 2000); // Swipe every 2 seconds
+}
+
+// Function to stop the automatic swipe
+function stopAutoSwipe() {
+    clearInterval(autoSlide);
+}
+
+// Event listeners for next/prev buttons
+$('#next').click(() => {
+    stopAutoSwipe();
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+    startAutoSwipe();
+});
+
+$('#prev').click(() => {
+    stopAutoSwipe();
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+    startAutoSwipe();
+});
+
+// Touch Swipe Logic
+let startX = 0;
+
+$('#carousel').on('touchstart', (e) => {
+    stopAutoSwipe();
+    startX = e.originalEvent.touches[0].clientX;
+});
+
+$('#carousel').on('touchend', (e) => {
+    const endX = e.originalEvent.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+        // Swipe left
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    } else if (endX - startX > 50) {
+        // Swipe right
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
+    startAutoSwipe();
+});
+
+// Initialize the carousel
+$(document).ready(() => {
+    showSlide(currentSlide);
+    startAutoSwipe(); // Start auto swipe on page load
+});
+
+        // Binance Market Data
+        const marketPairs = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "LTCUSDT", "TRXUSDT", "XRPUSDT" , "ADAUSDT", "EOSUSDT" , "DOGEUSDT" , "FETUSDT" , "LINKUSDT" , "VETUSDT"];
+        const marketData = marketPairs.map(pair => ({ name: pair, price: 0, change: 0 }));
+
+        function fetchMarketData() {
+            $.getJSON(`https://api.binance.com/api/v3/ticker/24hr`, data => {
+                const filteredData = data.filter(item => marketPairs.includes(item.symbol));
+                filteredData.forEach((item, index) => {
+                    marketData[index].price = parseFloat(item.lastPrice);
+                    marketData[index].change = parseFloat(item.priceChangePercent).toFixed(6);
+                });
+                updateMarket();
+            }).fail(() => {
+              console.log('fail fetching')
+                // Simulate price changes if API fails
+                marketData.forEach(data => {
+                    data.change = (Math.random() * 2 - 1).toFixed(2); // Random change
+                    data.price = (parseFloat(data.price) * (1 + parseFloat(data.change) / 100)).toFixed(3);
+                });
+                updateMarket();
+            });
+            
+            
+        }
+
+        function updateMarket() {
+            $('#marketData').empty();
+            marketData.forEach(data => {
+                const changeClass = data.change > 0 ? 'text-lime-400 font-semibold' : 'text-red-500 font-semibold';
+                const arrow = data.change > 0 ? '⬆' : '⬇';
+                $('#marketData').append(`
+                     
+                    <tr class="space-y-12">
+                        <td class="text-start">
+                        <span class="font-normal text-gray-400 ">
+                        ${data.name}
+                        </span>
+                       
+                        </td>
+                        <td class="w-full text-gray-500">${data.price}</td>
+                        <td class="${changeClass} text-end">${arrow} ${Math.abs(data.change)}0%</td>
+                    </tr>
+                `);
+            });
+        }
+
+        // Bottom Navigation
+$(document).ready(function () {
+        // Click event for navigation items
+        $("nav ul li").click(function () {
+            // Remove active class from all items
+            $("nav ul li").removeClass("text-gray-500 active").addClass("text-gray-900");
+            
+            // Add active class to the clicked item
+            $(this).removeClass("text-gray-900").addClass("text-gray-500 active");
+        });
+    });
+        $(document).ready(() => {
+            showSlide(currentSlide);
+            fetchMarketData();
+            setInterval(fetchMarketData, 1000); // Update prices every 2 seconds
+        });
+    </script>
+</body>
+</html>
